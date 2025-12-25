@@ -1,9 +1,5 @@
-# Template Downloader
-
-...
+# NHentai Downloader Browser Extension (Chrome, Firefox, Edge, Opera, Brave)
 
 
-
-# Template Downloader Research
-
-...
+## Related
+-
