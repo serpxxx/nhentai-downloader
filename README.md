@@ -2,26 +2,19 @@
 
 
 ## Related
--
 
 ---
-
 <details>
-
 <summary>
   Research
 </summary>
-
 # How to Download NHentai Videos: Technical Analysis of Stream Patterns, CDNs, and Download Methods
-
 *A comprehensive research document analyzing NHentai's video infrastructure, embed patterns, stream formats, and optimal download strategies using modern tools*
-
 **Authors**: SERP Apps  
 **Date**: December 2025  
 **Version**: 1.0
-
 ---
-
+- [NHentai Downloader gist](https://gist.github.com/devinschumacher/affcf558d4ab8f6a16cb495ee07cc1ac)
 ## Abstract
 
 This document explains NHentai's gallery-centric structure and the absence of native video streams, focusing on image extraction and optional animated assets.
