@@ -14,13 +14,13 @@
   <rect x="110" y="286" width="310" height="228" rx="20" fill="#6b21a8"/>
   <rect x="452" y="286" width="310" height="228" rx="20" fill="#7e22ce"/>
   <rect x="794" y="286" width="374" height="228" rx="20" fill="#9333ea"/>
-  <text x="140" y="350" fill="#f5d0fe" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700">1. Open the video page</text>
-  <text x="140" y="394" fill="#faf5ff" font-family="Segoe UI, Arial, sans-serif" font-size="22">Press play and let the extension</text>
-  <text x="140" y="426" fill="#faf5ff" font-family="Segoe UI, Arial, sans-serif" font-size="22">detect the active media.</text>
-  <text x="482" y="350" fill="#f5d0fe" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700">2. Pick a quality</text>
-  <text x="482" y="394" fill="#faf5ff" font-family="Segoe UI, Arial, sans-serif" font-size="22">Choose the source variant exposed</text>
-  <text x="482" y="426" fill="#faf5ff" font-family="Segoe UI, Arial, sans-serif" font-size="22">by the page or popup.</text>
-  <text x="824" y="350" fill="#faf5ff" font-family="Segoe UI, Arial, sans-serif" font-size="24" font-weight="700">3. Save the MP4</text>
-  <text x="824" y="394" fill="#faf5ff" font-family="Segoe UI, Arial, sans-serif" font-size="22">Download the file for cleaner</text>
-  <text x="824" y="426" fill="#faf5ff" font-family="Segoe UI, Arial, sans-serif" font-size="22">offline playback later.</text>
+  <text x="140" y="350" fill="#f5d0fe" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700">1. Load the page</text>
+  <text x="140" y="394" fill="#faf5ff" font-family="Segoe UI, Arial, sans-serif" font-size="20">Press play and let the</text>
+  <text x="140" y="426" fill="#faf5ff" font-family="Segoe UI, Arial, sans-serif" font-size="20">extension detect video.</text>
+  <text x="482" y="350" fill="#f5d0fe" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700">2. Pick quality</text>
+  <text x="482" y="394" fill="#faf5ff" font-family="Segoe UI, Arial, sans-serif" font-size="20">Choose the source option</text>
+  <text x="482" y="426" fill="#faf5ff" font-family="Segoe UI, Arial, sans-serif" font-size="20">that fits your needs.</text>
+  <text x="824" y="350" fill="#faf5ff" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="700">3. Save the MP4</text>
+  <text x="824" y="394" fill="#faf5ff" font-family="Segoe UI, Arial, sans-serif" font-size="20">Download the file for</text>
+  <text x="824" y="426" fill="#faf5ff" font-family="Segoe UI, Arial, sans-serif" font-size="20">offline playback later.</text>
 </svg>
