@@ -1,304 +1,167 @@
-# NHentai Downloader Browser Extension (Chrome, Firefox, Edge, Opera, Brave)
+# NHentai Downloader (Browser Extension)
 
+> Download supported NHentai videos as MP4 files from the browser with direct quality selection.
 
-## Related
+NHentai Downloader is a browser extension for users who want a cleaner way to save supported NHentai videos without relying on generic downloader sites or HLS tools. It detects supported video pages in the browser, exposes the available qualities, and exports finished downloads as MP4 for easier playback later.
 
----
-<details>
-<summary>
-  Research
-</summary>
-# How to Download NHentai Videos: Technical Analysis of Stream Patterns, CDNs, and Download Methods
-*A comprehensive research document analyzing NHentai's video infrastructure, embed patterns, stream formats, and optimal download strategies using modern tools*
-**Authors**: SERP Apps  
-**Date**: December 2025  
-**Version**: 1.0
----
-- [NHentai Downloader gist](https://gist.github.com/devinschumacher/affcf558d4ab8f6a16cb495ee07cc1ac)
-## Abstract
+- Download supported NHentai videos directly from the page
+- Choose from the quality options exposed by the source
+- Save finished files as standard MP4
+- Use in-page controls, popup controls, or right-click actions
+- Keep downloads organized in a dedicated folder
 
-This document explains NHentai's gallery-centric structure and the absence of native video streams, focusing on image extraction and optional animated assets.
+## Links
+
+- :rocket: Get it here: [NHentai Downloader](https://serp.ly/nhentai-downloader)
+- :new: Latest release: [GitHub Releases](https://github.com/serpapps/nhentai-downloader/releases/latest)
+- :question: Help center: [SERP Help](https://help.serp.co/en/)
+- :beetle: Report bugs: [GitHub Issues](https://github.com/serpapps/nhentai-downloader/issues)
+- :bulb: Request features: [Feature Requests](https://github.com/serpapps/nhentai-downloader/issues)
+
+## Preview
+
+![NHentai Downloader workflow preview](assets/workflow-preview.svg)
 
 ## Table of Contents
 
-1. [Introduction](#1-introduction)
-2. [NHentai Video Infrastructure Overview](#2-nhentai-video-infrastructure-overview)
-3. [URL Patterns and Detection](#3-url-patterns-and-detection)
-4. [Stream Formats and CDN Analysis](#4-stream-formats-and-cdn-analysis)
-5. [yt-dlp Implementation Strategies](#5-yt-dlp-implementation-strategies)
-6. [FFmpeg Processing Techniques](#6-ffmpeg-processing-techniques)
-7. [Alternative Tools and Backup Methods](#7-alternative-tools-and-backup-methods)
-8. [NHentai API Integration](#8-nhentai-api-integration)
-9. [Implementation Recommendations](#9-implementation-recommendations)
-10. [Troubleshooting and Edge Cases](#10-troubleshooting-and-edge-cases)
-11. [Conclusion](#11-conclusion)
+- [Why NHentai Downloader](#why-nhentai-downloader)
+- [Features](#features)
+- [How It Works](#how-it-works)
+- [Step-by-Step Tutorial: How to Download Videos from NHentai](#step-by-step-tutorial-how-to-download-videos-from-nhentai)
+- [Supported Formats](#supported-formats)
+- [Who It's For](#who-its-for)
+- [Common Use Cases](#common-use-cases)
+- [Troubleshooting](#troubleshooting)
+- [Trial & Access](#trial--access)
+- [Installation Instructions](#installation-instructions)
+- [FAQ](#faq)
+- [Notes](#notes)
+- [License](#license)
+- [About NHentai](#about-nhentai)
 
----
+## Why NHentai Downloader
 
-## 1. Introduction
+NHentai video pages are built around streaming playback, not straightforward file saving. Generic downloaders often miss the actual media source or create a clumsy workflow for users who just want a usable MP4 copy.
 
-NHentai is primarily an image gallery platform. Video content is rare; download flows focus on images and any embedded media referenced in posts.
+NHentai Downloader is designed specifically for supported NHentai pages. It adds a direct browser-based workflow for detecting the media, selecting a quality, and exporting the final video as MP4 without extra tools.
 
-### 1.1 Research Scope
+## Features
 
-- NHentai galleries and image pages
-- Image CDN URL patterns
-- Optional embeds or external media
+- Video downloads from supported NHentai pages
+- Quality selection for available stream variants
+- In-page controls on supported video pages
+- Popup workflow for starting and managing downloads
+- Right-click access for a faster saving flow
+- MP4 output for easier playback and transfer
+- Automatic saving into a dedicated NHENTAI folder
+- Cross-browser support for Chrome, Edge, Brave, Opera, Firefox, Whale, and Yandex
 
-### 1.2 Methodology
+## How It Works
 
-- Inspect gallery JSON or page source for image URLs
-- Use gallery-dl to batch download galleries
+1. Install the extension from the latest release.
+2. Open NHentai and go to the video page you want to save.
+3. Start playback so the extension can detect the media.
+4. Open the popup or use the on-page controls.
+5. Choose the quality option you want.
+6. Start the download and wait for the MP4 export to finish.
+7. Save the final file locally.
 
----
+## Step-by-Step Tutorial: How to Download Videos from NHentai
 
-## 2. NHentai Video Infrastructure Overview
+1. Install NHentai Downloader from the latest GitHub release.
+2. Open NHentai and navigate to the video page you want.
+3. Let the player load fully and press play.
+4. Click the extension button or use the on-page download control.
+5. Review the quality options shown by the extension.
+6. Choose the version you want and begin the download.
+7. Wait for the MP4 file to finish exporting.
+8. Open the finished file from your Downloads folder.
 
-### 2.1 Video Hosting Types
+## Supported Formats
 
-- Image galleries (primary)
-- Occasional external embeds
+- Input: Supported NHentai videos
+- Output: MP4
 
-### 2.2 CDN Architecture
+Saved files use MP4 so they are easier to replay on standard media players, move between devices, or archive locally.
 
-- i.nhentai.net and t.nhentai.net image CDNs
+## Who It's For
 
-### 2.3 Video Processing Pipeline
+- NHentai users who want offline copies of supported videos
+- Users who want direct browser-based saving instead of external tools
+- People who want quality selection before downloading
+- Anyone organizing personal downloads into a cleaner local library
 
-1. User loads gallery page
-2. Client requests page JSON for image list
-3. Images served directly from CDN
+## Common Use Cases
 
-### 2.4 Access Control and Authentication
+- Save a supported NHentai video for offline viewing
+- Download the best quality exposed by the page
+- Keep a local copy for later playback
+- Start downloads directly from the player or extension popup
+- Avoid generic downloader sites and manual stream extraction
 
-- Public access to galleries
-- Rate limits may apply
+## Troubleshooting
 
----
+**The extension is not detecting the video**  
+Press play first and wait a few seconds so the media has time to initialize.
 
-## 3. URL Patterns and Detection
+**The page control is missing**  
+Open the extension popup directly. Some supported pages work better through the popup UI.
 
-### 3.1 Watch Page URL Patterns
+**Only one quality option is listed**  
+That usually means the page is exposing a single playable stream variant.
 
-```
-https://nhentai.net/g/<id>/
-```
+**The download failed partway through**  
+Check your connection and refresh the page before starting again.
 
-### 3.2 Embed URL Patterns
+**The page requires account access**  
+The extension only works on media you can already open and play in your active browser session.
 
-```
-https://nhentai.net/g/<id>/<page>/
-```
+## Trial & Access
 
-### 3.3 Direct Media and CDN URL Patterns
+- Includes **3 free downloads** so you can test the workflow first
+- Email sign-in uses secure one-time password verification
+- No credit card required for the trial
+- Unlimited downloads are available with a paid license
 
-```
-https://i.nhentai.net/galleries/<id>/<page>.jpg
-https://t.nhentai.net/galleries/<id>/<page>t.jpg
-```
+Start here: [https://serp.ly/nhentai-downloader](https://serp.ly/nhentai-downloader)
 
-### 3.4 Regex Patterns for URL Extraction
+## Installation Instructions
 
-```regex
-nhentai\\.net/g/(\\d+)
-galleries/(\\d+)/
-```
+1. Open the latest release page:
+   [https://github.com/serpapps/nhentai-downloader/releases/latest](https://github.com/serpapps/nhentai-downloader/releases/latest)
+2. Download the extension build for your browser.
+3. Install the extension.
+4. Open NHentai and navigate to a supported video page.
+5. Use the extension controls to start downloading.
 
-### 3.5 Command-line URL Extraction
+## FAQ
 
-```bash
-grep -oE "https?://i\\.nhentai\\.net/galleries/[^'\" ]+" page.html | sort -u
-```
+**Can I download NHentai videos directly from the page?**  
+Yes. Supported video pages can be downloaded directly through the extension.
 
----
+**What file format do downloads use?**  
+Videos are saved as MP4 files.
 
-## 4. Stream Formats and CDN Analysis
+**Can I choose the quality?**  
+Yes. The extension lists the stream variants exposed by the source page.
 
-### 4.1 Stream Formats
+**Where are videos saved?**  
+They are saved to your default Downloads location, typically inside an NHENTAI subfolder.
 
-| Format | Extension | Notes |
-|--------|-----------|-------|
-| Images | .jpg/.png | Primary content; no native video streams |
+**Do I need extra software?**  
+No. Everything runs through the browser extension.
 
-### 4.2 Typical Quality Ladder
+## Notes
 
-| Quality | Typical Resolution | Notes |
-|---------|--------------------|-------|
-| Low | 360p - 480p | Fast preview streams or mobile variants |
-| Medium | 720p | Common default for web playback |
-| High | 1080p+ | Available when source uploads are higher quality |
+- Only download content you own or have explicit permission to save
+- An internet connection is required for downloads
+- Source quality depends on the media exposed by NHentai
+- Some pages may require account access or site-specific permissions
 
-### 4.3 CDN URL Construction and Query Parameters
+## License
 
-- Image URLs are static and not tokenized
+This repository includes an MIT license in [LICENSE.md](LICENSE.md).
 
-### 4.4 Validation and Inspection Commands
+## About NHentai
 
-```bash
-# ffprobe is not typically needed for image-only content
-```
-
----
-
-## 5. yt-dlp Implementation Strategies
-
-yt-dlp is not the primary tool for image galleries; use gallery-dl for bulk image downloads.
-
-### 5.1 Basic Usage
-
-```bash
-yt-dlp [OPTIONS] [--] URL [URL...]
-yt-dlp -F "https://example.com/watch/123"
-```
-
-### 5.2 Authentication and Cookies
-
-- Authentication is generally not required
-
-### 5.3 Format Selection and Output Templates
-
-```bash
-yt-dlp -f bestvideo+bestaudio/best "URL"
-yt-dlp -o "%(title)s.%(ext)s" "URL"
-yt-dlp --download-archive archive.txt "URL"
-```
-
-### 5.4 Site-Specific Examples
-
-```bash
-yt-dlp "https://nhentai.net/g/<id>/"
-```
-
-### 5.5 Batch and Archive Mode
-
-```bash
-yt-dlp -a urls.txt --download-archive archive.txt
-yt-dlp --no-overwrites --continue "URL"
-```
-
-### 5.6 Error Handling Patterns
-
-- Prefer gallery-dl for galleries
-
----
-
-## 6. FFmpeg Processing Techniques
-
-FFmpeg can be used to assemble images into video if needed.
-
-### 6.1 Inspect and Validate Streams
-
-```bash
-ffmpeg -framerate 30 -i frame%03d.jpg -c:v libx264 output.mp4
-```
-
-### 6.2 Common Remux and Repair Patterns
-
-```bash
-ffmpeg -i "playlist.m3u8" -c copy output.mp4
-ffmpeg -i input.mp4 -c copy -movflags +faststart output.mp4
-ffprobe -hide_banner -show_streams output.mp4
-```
-
----
-
-## 7. Alternative Tools and Backup Methods
-
-### 7.1 Streamlink
-
-```bash
-# Streamlink not applicable for image galleries
-```
-
-### 7.2 aria2c
-
-```bash
-aria2c -i urls.txt -j 8
-```
-
-### 7.3 gallery-dl
-
-```bash
-gallery-dl "https://nhentai.net/g/<id>/"
-```
-
-### 7.4 Browser DevTools
-
-- Look for JSON payloads that list image filenames
-
----
-
-## 8. NHentai API Integration
-
-### 8.1 Known Endpoints
-
-- None documented; rely on page and player data extraction
-
-### 8.2 Example Requests
-
-```
-# No public API calls identified; extract URLs from HTML/player data
-```
-
-### 8.3 Token and Session Handling
-
-- No public API documented; gallery-dl handles extraction
-
----
-
-## 9. Implementation Recommendations
-
-### 9.1 Detection Hierarchy
-
-- Identify gallery ID
-- Use gallery-dl for batch downloads
-
-### 9.2 Site-Specific Notes
-
-- Treat NHentai as image-first, not video
-
-### 9.3 Storage and Naming Strategy
-
-- Store images in a gallery folder by ID
-
----
-
-## 10. Troubleshooting and Edge Cases
-
-- Image filenames may use different extensions
-
----
-
-## 11. Conclusion
-
-NHentai is primarily image-based. Use gallery-dl to extract galleries and only use yt-dlp or ffmpeg if a specific post contains embedded video content from third parties.
-
-| Tool | Best Use Case | Notes |
-|------|---------------|-------|
-| yt-dlp | Primary downloader for MP4/HLS | Supports cookies, format selection, retries |
-| ffmpeg | Remuxing and validation | Useful for HLS to MP4 conversion |
-| streamlink | Live/HLS fallback | Streams to file or pipes into ffmpeg |
-| aria2c | Multi-connection HTTP/HLS downloads | Good for large files and retries |
-| gallery-dl | Image-first or gallery-heavy sites | Best for gallery or attachment extraction |
-
-
----
-
-## Disclaimer and Ethical Use
-
-This document is provided for lawful, personal, or authorized use cases only. Always respect the site terms of service, content creator rights, and applicable laws. If DRM or explicit access controls are present, do not attempt to bypass them; use official downloads or creator-provided access instead.
-
-## Last Updated
-
-December 2025
-
-## Next Review
-
-90 days from last update or when site playback changes are observed.
-
-## Related
-
-- SERP Apps research index (internal)
-- SERP extension downloaders (internal)
-
-</details>
+NHentai is a streaming-focused site where users often want a simple offline copy for later viewing, but the playback layer is not designed around direct file saving. NHentai Downloader simplifies that workflow with in-browser detection, quality selection, and MP4 export.
