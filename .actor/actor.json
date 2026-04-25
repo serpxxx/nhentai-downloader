@@ -1,0 +1,10 @@
+{
+  "actorSpecification": 1,
+  "buildTag": "latest",
+  "description": "Nhentai Downloader lets collectors save doujinshi they are permitted to view, complete with page order and metadata. Skip page-by-page saving and keep your library ready for offline reading.\n\nUse it to organize research references, preserve favorite works on your tablet, or keep backups when traveling without stable internet.",
+  "input": "./INPUT_SCHEMA.json",
+  "name": "nhentai-downloader",
+  "readme": "../ACTOR.md",
+  "title": "Nhentai Downloader",
+  "version": "0.0"
+}
