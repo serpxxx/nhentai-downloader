@@ -1,4 +1,4 @@
-# NHentai Downloader Browser Extension
+# NHentai Downloader
 
 > Download supported NHentai videos as MP4 files from the browser with direct quality selection.
 
