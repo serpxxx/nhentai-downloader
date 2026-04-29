@@ -5,6 +5,6 @@
   "input": "./INPUT_SCHEMA.json",
   "name": "nhentai-downloader",
   "readme": "../ACTOR.md",
-  "title": "NHentai Downloader Browser Extension",
+  "title": "NHentai Downloader",
   "version": "0.0"
 }
